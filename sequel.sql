@@ -66,12 +66,18 @@ FROM
 
 -- Consultar cual es la longitud más grande entre todos los títulos de las películas.
 SELECT
-   pelicula,
    MAX (LENGTH(pelicula)) AS longitud_titulo_max
 FROM
-   peliculas
-GROUP BY
-   pelicula
-ORDER BY
-   longitud_titulo_max DESC;
+   peliculas;
+
+
+-- SELECT
+--    pelicula,
+--    MAX (LENGTH(pelicula)) AS longitud_titulo_max
+-- FROM
+--    peliculas
+-- GROUP BY
+--    pelicula
+-- ORDER BY
+--    longitud_titulo_max DESC;
 
