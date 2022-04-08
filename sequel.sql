@@ -16,13 +16,9 @@ CREATE TABLE reparto (
 );
 
 -- Cargar ambos archivos a su tabla correspondiente.
-\ copy peliculas
-FROM
-   'C:/Users/diego/Desktop/peliculas.csv' csv header;
+\copy peliculas FROM 'C:/Users/diego/Desktop/peliculas.csv' csv header;
 
-\ copy reparto
-FROM
-   'C:/Users/diego/Desktop/reparto.csv' csv header;
+\copy reparto FROM 'C:/Users/diego/Desktop/reparto.csv' csv;
 
 -- Obtener el ID de la película “Titanic”.
 SELECT
@@ -74,7 +70,8 @@ SELECT
    MAX (LENGTH(pelicula)) AS longitud_titulo_max
 FROM
    peliculas
-group by
+GROUP BY
    pelicula
-order by
+ORDER BY
    longitud_titulo_max DESC;
+
